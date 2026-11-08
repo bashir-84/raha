@@ -37,3 +37,10 @@ export const heroLabels = [
  ['CONNECTING DOTS','link','#a8d9fa'],['EXPLORING COLOUR','palette','#59dba9'],
  ['MAKING CONNECTIONS','link','#fff7be'],['A FRESH PERSPECTIVE','spark','#dafa9c']
 ];
+
+// Replace null with your real https:, tel:, or mailto: destination.
+export const contactLinks = [
+ {label:'Instagram',url:null,icon:'instagram'}, {label:'WhatsApp',url:null,icon:'whatsapp'},
+ {label:'LinkedIn',url:null,icon:'linkedin'}, {label:'Telegram',url:null,icon:'telegram'},
+ {label:'Phone',url:null,icon:'phone'}, {label:'Email',url:null,icon:'email'}
+];
