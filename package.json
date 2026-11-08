@@ -1,0 +1,1 @@
+{"name":"raha-creative-portfolio","version":"1.0.0","private":true,"type":"module","scripts":{"build":"node src/build.mjs","dev":"node src/serve.mjs","check":"node src/check.mjs"}}
