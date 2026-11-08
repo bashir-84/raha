@@ -26,3 +26,14 @@ export const steps=[
  ['Refine','Make the good things better.','We review in context, test what matters, and bring fresh eyes to every important detail.','Test → Discuss → Refine'],
  ['Deliver','Ready for what comes next.','A considered handover, organised files, and a clear system that is easy to keep using.','Organise → Guide → Launch']
 ];
+
+// Editable hero playground labels. Icon names map to the shared SVG set.
+export const heroLabels = [
+ ['THINKING IN SYSTEMS','grid','#f4bfdf'],['PROTOTYPING','shuffle','#fff7be'],
+ ['MAKING IT POP','spark','#ff914e'],['MOVING IDEAS','move','#a8d9fa'],
+ ['REFRAMING PROBLEMS','grid','#59dba9'],['IMPROVING UX','smile','#ffe32d'],
+ ['STAYING CURIOUS','search','#dafa9c'],['TESTING IDEAS','pencil','#e0d2f5'],
+ ['TELLING STORIES','book','#f4bfdf'],['CREATING MOTION','play','#ff914e'],
+ ['CONNECTING DOTS','link','#a8d9fa'],['EXPLORING COLOUR','palette','#59dba9'],
+ ['MAKING CONNECTIONS','link','#fff7be'],['A FRESH PERSPECTIVE','spark','#dafa9c']
+];
