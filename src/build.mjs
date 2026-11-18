@@ -48,6 +48,10 @@ const staticCopy={
  '02 — SKETCH &amp; EXPLORE':'02 — STRUCTURE &amp; EXPLORE',
  '03 — DESIGN &amp; REFINE':'03 — DESIGN &amp; REFINE',
  'SAMPLE DESIGN SYSTEM':'VISUAL DESIGN SYSTEM'
+ ,'Making loyalty<br>easier to use.':'Loyan'
+ ,'Industrial information,<br>made more engaging.':'Borna Sanat Toos'
+ ,'Music streaming<br>product design.':'Krow'
+ ,'Children’s fashion<br>e-commerce.':'Homayoun Store'
 };
-async function replaceStaticCopy(dir){for(const entry of await readdir(dir,{withFileTypes:true})){const file=`${dir}/${entry.name}`;if(entry.isDirectory())await replaceStaticCopy(file);else if(entry.name.endsWith('.html')){let html=await readFile(file,'utf8');for(const [from,to] of Object.entries(staticCopy))html=html.replaceAll(from,to);let projectStatus=0;html=html.replaceAll('SAMPLE PROJECT · 2026',()=>projects[projectStatus++]?.status||'');html=html.replaceAll('<dd>undefined</dd>',`<dd>${html.includes('<h1>Krow')?'Personal Project':'Client Project'}</dd>`);await writeFile(file,html);}}}
+async function replaceStaticCopy(dir){for(const entry of await readdir(dir,{withFileTypes:true})){const file=`${dir}/${entry.name}`;if(entry.isDirectory())await replaceStaticCopy(file);else if(entry.name.endsWith('.html')){let html=await readFile(file,'utf8');for(const [from,to] of Object.entries(staticCopy))html=html.replaceAll(from,to);let projectStatus=0;html=html.replaceAll('SAMPLE PROJECT · 2026',()=>projects[projectStatus++]?.status||'');html=html.replaceAll('<dd>undefined</dd>',`<dd>${html.includes('<h1>Krow')?'Personal Project':'Client Project'}</dd>`);html=html.replace(/<a href="([^"]*)#work">Work<\/a>/g,(_,base)=>`<a href="${base}#work">Work</a><a class="case-menu-entry" href="${base}work/loyan/">View case study</a>`);html=html.replace(/<a class="text-link back-work" href="([^\"]*)#project-[^\"]*" data-return>← Back to selected work<\/a>/g,(_,base)=>`<nav class="case-study-menu" aria-label="Case studies">${projects.map(p=>`<a href="${base}work/${p.slug}/">${p.name}</a>`).join('')}</nav>`);await writeFile(file,html);}}}
 await replaceStaticCopy('dist');console.log('Built home, archive and 4 case studies.');
